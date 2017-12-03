@@ -14,14 +14,16 @@ class Vitrine {
       'http://roberval.chaordicsystems.com/challenge/challenge.json');
     document.body.appendChild(scriptEl);
     window.X = function(data) {
+      let elements = [];
       data.data.recommendation.map(recommendation => {
-        let element = `
+        console.log(recommendation);
+        elements.push(`
           <div>
             <p>${recommendation.name}</p>
           </div>
-        `;
-        $('#vitrine-view').appendChild(document.createElement('div')).textContent=recommendation.name;
-      })
+        `);
+      });
+      $('#vitrine-view').innerHTML = elements.join('');
     };
   }
 
