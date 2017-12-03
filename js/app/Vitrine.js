@@ -18,8 +18,12 @@ class Vitrine {
       data.data.recommendation.map(recommendation => {
         console.log(recommendation);
         elements.push(`
-          <div>
+          <div class="recommendation-item">
+            <img src="http:${recommendation.imageName}">
             <p>${recommendation.name}</p>
+            ${recommendation.oldPrice ? '<p class="recommendation-old-price">De: ' + recommendation.oldPrice : ''}
+            <p class="recommendation-price">Por: ${recommendation.price}</p>
+            <p class="recommendation-paymant-conditions">${recommendation.productInfo.paymentConditions} sem juros</p>
           </div>
         `);
       });
