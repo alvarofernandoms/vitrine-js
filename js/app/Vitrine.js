@@ -5,6 +5,7 @@ class Vitrine {
 
   _init() {
     this._getProducts();
+    this._slick();
   }
 
   _getProducts() {
@@ -16,7 +17,6 @@ class Vitrine {
     window.X = function(data) {
       let elements = [];
       data.data.recommendation.map(recommendation => {
-        console.log(recommendation);
         elements.push(`
           <div class="recommendation-item">
             <img src="http:${recommendation.imageName}">
@@ -27,8 +27,35 @@ class Vitrine {
           </div>
         `);
       });
-      $('#vitrine-view').innerHTML = elements.join('');
+      $('#vitrine-view .recommendation-panel').innerHTML = elements.join('');
     };
+  }
+
+  _slick() {
+    let $ = document.querySelector.bind(document),
+      recomList = $('.recommendation-panel'),
+      btnLeft = $('.arrow-left'),
+      btnRight = $('.arrow-right'),
+      count = 0;
+
+    let slideProducts = (dir) => {
+      let totalChildren = recomList.querySelectorAll('.recommendation-item').length;
+      dir === 'left' ? ++count : --count;
+      recomList.style = `
+          transform: translate3d(${count * 286 + 'px'}, 0px, 0px);
+          transition-duration: 500ms;
+          transition-delay: 0ms;
+      `;
+      btnLeft.style.display = count < 0 ? 'block' : 'none';
+      btnRight.style.display = count > 6 - totalChildren ? 'block' : 'none';
+    }
+
+    btnLeft.addEventListener('click', (e) => {
+      slideProducts('left');
+    });
+    btnRight.addEventListener('click', (e) => {
+      slideProducts('right');
+    });
   }
 
 }

@@ -1,4 +1,40 @@
+#vitrine-view {
+  overflow: hidden;
+  display: block;
+  position: relative;
+}
+
+.arrow {
+  top: 0;
+  bottom: 0;
+  z-index: 2;
+  cursor: pointer;
+  font-size: 20px;
+  position: absolute;
+  border: none;
+}
+
+.arrow.arrow-left {
+  display: none;
+  left: 0;
+}
+
+.arrow.arrow-right {
+  right: 0;
+}
+
+.recommendation-panel {
+  width: 2500px;
+  height: 400px;
+  overflow: hidden;
+  position: relative;
+}
+
 .recommendation-item {
-  display: inline-block;
+  outline: none;
+  display: block;
   width: 244px;
+  height: auto;
+  float: left;
+  min-height: 1px;
 }
