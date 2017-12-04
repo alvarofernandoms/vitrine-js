@@ -2,10 +2,12 @@
   overflow: hidden;
   display: block;
   position: relative;
+  border: solid 1px #d4e3f0;
+  border-radius: 10px;
 }
 
 .arrow {
-  top: 0;
+  top: 48px;
   bottom: 0;
   z-index: 2;
   cursor: pointer;
@@ -23,9 +25,19 @@
   right: 0;
 }
 
+.recommendation-panel-title h2 {
+  font-family: arial;
+  padding: 10px 0;
+  margin: 0 0 12px;
+  padding-left: 30px;
+  background-image: linear-gradient( to top,
+  #e5f1fb 50%,
+  #eaf2f9 50%);
+}
+
 .recommendation-panel {
   width: 2500px;
-  height: 400px;
+  height: 300px;
   overflow: hidden;
   position: relative;
 }
@@ -42,7 +54,7 @@
 
 .recommendation-item:hover {
   background: #d2e4f3;
-  background: linear-gradient(to top, rgba(255,0,0,0), #d2e4f3);
+  background: linear-gradient(to top, rgba(255, 0, 0, 0), #d2e4f3);
 }
 
 .recommendation-item .recommendation-image {
