@@ -19,10 +19,12 @@ class Vitrine {
       data.data.recommendation.map(recommendation => {
         elements.push(`
           <div class="recommendation-item">
-            <img src="http:${recommendation.imageName}">
-            <p>${recommendation.name}</p>
+            <div class="recommendation-image">
+              <img src="http:${recommendation.imageName}">
+            </div>
+            <p class="recommendation-name">${recommendation.name}</p>
             ${recommendation.oldPrice ? '<p class="recommendation-old-price">De: ' + recommendation.oldPrice : ''}
-            <p class="recommendation-price">Por: ${recommendation.price}</p>
+            <p class="recommendation-price">Por: <span class="price-highlight">${recommendation.price}</span></p>
             <p class="recommendation-paymant-conditions">${recommendation.productInfo.paymentConditions} sem juros</p>
           </div>
         `);
@@ -47,7 +49,9 @@ class Vitrine {
           transition-delay: 0ms;
       `;
       btnLeft.style.display = count < 0 ? 'block' : 'none';
-      btnRight.style.display = count > 6 - totalChildren ? 'block' : 'none';
+      // TODO: Change this to get the size of div
+      // instead of have to change the subtraction all the time
+      btnRight.style.display = count > 8 - totalChildren ? 'block' : 'none';
     }
 
     btnLeft.addEventListener('click', (e) => {

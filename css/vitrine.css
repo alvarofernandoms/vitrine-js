@@ -33,8 +33,67 @@
 .recommendation-item {
   outline: none;
   display: block;
-  width: 244px;
-  height: auto;
+  width: 180px;
+  height: 300px;
   float: left;
   min-height: 1px;
+  overflow: auto;
+}
+
+.recommendation-item:hover {
+  background: #d2e4f3;
+  background: linear-gradient(to top, rgba(255,0,0,0), #d2e4f3);
+}
+
+.recommendation-item .recommendation-image {
+  margin: 7px 7px 10px;
+  border: solid 2px #fff;
+  background: #fff;
+  text-align: center;
+}
+
+.recommendation-item:hover.recommendation-item .recommendation-image {
+  border: solid 2px #bbcedd;
+}
+
+.recommendation-item .recommendation-name {
+  text-align: left;
+  font-size: 12px;
+  padding: 0 5px;
+  margin: 0 0 7px;
+  color: #333;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.recommendation-item .recommendation-old-price {
+  text-align: left;
+  font-size: 12px;
+  color: #000;
+  padding: 0 5px;
+  margin: 0;
+}
+
+.recommendation-item .recommendation-price {
+  text-align: left;
+  font-size: 12px;
+  color: #cc0000;
+  padding: 0 5px;
+  margin: 0;
+}
+
+.recommendation-item .recommendation-price span.price-highlight {
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.recommendation-item .recommendation-paymant-conditions {
+  width: 50%;
+  text-align: left;
+  font-size: 12px;
+  color: #cc0000;
+  padding: 0 5px;
+  margin: 0;
 }
